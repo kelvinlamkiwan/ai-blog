@@ -1,7 +1,9 @@
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages 專案站台：https://kelvinlamkiwan.github.io/ai-blog/
+// base 預設 /ai-blog/（GitHub Pages 專案站台）
+// 部署到 DO Static Sites 時，設環境變數 ASTRO_BASE=/ 即可用 root
+// site 用於 canonical URL，可設 ASTRO_SITE 覆寫
 export default defineConfig({
-  site: 'https://kelvinlamkiwan.github.io',
-  base: '/ai-blog/',
+  site: process.env.ASTRO_SITE || 'https://kelvinlamkiwan.github.io',
+  base: process.env.ASTRO_BASE || '/ai-blog/',
 });
