@@ -303,6 +303,14 @@ a {
   font-size: 1.6rem;
 }
 
+/* Empty state */
+.empty-state {
+  text-align: center;
+  padding: 48px 0;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
 /* Buy button */
 .buy-btn {
   display: inline-block;

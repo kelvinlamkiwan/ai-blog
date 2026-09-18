@@ -13,16 +13,22 @@ const products = Object.values(
       <p class="subtitle">電子書、諮詢、工作坊等 AI 產品同服務。</p>
     </section>
 
-    <div class="product-grid">
-      {products.map((p: any) => (
-        <a class="product-card" href={`${import.meta.env.BASE_URL}products/${p.frontmatter.slug}/`}>
-          <div class="product-thumb">{p.frontmatter.emoji || '🛒'}</div>
-          <div class="product-info">
-            <h2>{p.frontmatter.name}</h2>
-            <p class="product-price">{p.frontmatter.price}</p>
-          </div>
-        </a>
-      ))}
-    </div>
+    {products.length > 0 ? (
+      <div class="product-grid">
+        {products.map((p: any) => (
+          <a class="product-card" href={`${import.meta.env.BASE_URL}products/${p.frontmatter.slug}/`}>
+            <div class="product-thumb">{p.frontmatter.emoji || '🛒'}</div>
+            <div class="product-info">
+              <h2>{p.frontmatter.name}</h2>
+              <p class="product-price">{p.frontmatter.price}</p>
+            </div>
+          </a>
+        ))}
+      </div>
+    ) : (
+      <div class="empty-state">
+        <p>🛍️ 暫無產品，即將上架</p>
+      </div>
+    )}
   </main>
 </Base>
