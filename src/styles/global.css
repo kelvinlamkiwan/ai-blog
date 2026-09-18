@@ -6,6 +6,7 @@
   --border: #e6e6ef;
   --accent: #6366f1;
   --accent-soft: #eef2ff;
+  --green: #16a34a;
   --radius: 12px;
   --maxw: 720px;
 }
@@ -47,9 +48,10 @@ a {
   z-index: 10;
 }
 
-.site-header .container {
+.header-inner {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   height: 60px;
 }
 
@@ -60,6 +62,22 @@ a {
 }
 
 .brand:hover {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.site-nav a {
+  color: var(--text-soft);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
   color: var(--accent);
 }
 
@@ -219,6 +237,86 @@ a {
 .back a {
   color: var(--accent);
   font-weight: 500;
+}
+
+/* Product grid (shop) */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 16px 0 48px;
+}
+
+.product-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.product-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(99, 102, 241, 0.08);
+}
+
+.product-thumb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 140px;
+  font-size: 3.5rem;
+  background: linear-gradient(135deg, var(--accent-soft), #fdf4ff);
+}
+
+.product-thumb.large {
+  height: 220px;
+  font-size: 6rem;
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+}
+
+.product-info {
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+}
+
+.product-info h2 {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.4;
+}
+
+.product-price {
+  margin: 0;
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.product-price.large {
+  font-size: 1.6rem;
+}
+
+/* Buy button */
+.buy-btn {
+  display: inline-block;
+  margin-top: 16px;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  transition: background 0.15s ease;
+}
+
+.buy-btn:hover {
+  background: #4f46e5;
 }
 
 /* Footer */
