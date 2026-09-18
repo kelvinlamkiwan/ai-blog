@@ -5,4 +5,8 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   site: process.env.ASTRO_SITE || 'https://kelvinlamkiwan.github.io',
   base: process.env.ASTRO_BASE || '/',
+  server: {
+    // DO 用動態 hostname（xxx.ondigitalocean.app）駁入，allow 所有 host 避免被 block
+    allowedHosts: true,
+  },
 });
